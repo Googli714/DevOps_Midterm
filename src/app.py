@@ -2,6 +2,8 @@ from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
+def square(num):
+    return num * num
 
 @app.route('/square', methods=['GET'])
 def square_number():
@@ -14,7 +16,7 @@ def square_number():
             return jsonify({"error": "Please provide a number query parameter"}), 400
 
         # Calculate the square
-        result = number ** 2
+        result = square(number)
 
         # Return the result as JSON
         return jsonify({"original": number, "squared": result})
