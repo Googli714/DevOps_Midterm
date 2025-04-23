@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Square Area Calculator</title>
+</head>
+<body>
+    <h1>Square Area Calculator</h1>
+    <form method="POST">
+        <label for="width">Width:</label>
+        <input type="text" id="width" name="width" value="{{ width }}" required><br><br>
+        <label for="height">Height:</label>
+        <input type="text" id="height" name="height" value="{{ height }}" required><br><br>
+        <input type="submit" value="Calculate Area">
+    </form>
+
+    {% if area is not none %}
+        <h2>The area of the square is: {{ area }}</h2>
+    {% endif %}
+
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+</body>
+</html>
