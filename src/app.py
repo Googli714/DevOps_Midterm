@@ -20,7 +20,7 @@ def square_number():
         result = square(number)
 
         # Return the result as JSON
-        return jsonify({"original": number, "squared": result})
+        return jsonify({"original-changed": number, "squared": result})
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
